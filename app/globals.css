@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0B0D10;
+  color: #FFFFFF;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(139, 92, 246, .32);
+  color: #fff;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #A78BFA;
+  outline-offset: 3px;
+}
+
+.section-shell {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.section-pad {
+  padding-block: 112px;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #A1A1AA;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.section-label::after {
+  content: '';
+  height: 1px;
+  width: 54px;
+  background: #3A3F4A;
+}
+
+.card {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.035),
+      rgba(255,255,255,.012)
+    );
+  border: 1px solid #272B33;
+  border-radius: 18px;
+}
+
+.card-hover {
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  border-color: #464B58;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.018)
+    );
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* PROJECT CAROUSEL */
+.project-track {
+  scroll-snap-type: x mandatory;
+  padding-right: 4px;
+}
+
+.project-card {
+  scroll-snap-align: start;
+
+  /*
+    Shows 2 complete cards and roughly half
+    of the third card on desktop.
+  */
+  flex: 0 0 38%;
+}
+
+/* Project accent glow */
+.project-card {
+  position: relative;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 18px;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* Buttons */
+.button-primary {
+  background: #FFFFFF;
+  color: #09090B;
+}
+
+.button-primary:hover {
+  background: #E4E4E7;
+}
+
+.button-accent {
+  border-color: #4F46E5;
+  background: rgba(79, 70, 229, .12);
+}
+
+.button-accent:hover {
+  background: rgba(79, 70, 229, .22);
+  border-color: #818CF8;
+}
+
+/* Tech logo colors */
+.tech-icon {
+  transition:
+    transform .2s ease,
+    filter .2s ease;
+}
+
+.tech-card:hover .tech-icon {
+  transform: scale(1.08);
+}
+
+/* Project colored icon */
+.project-icon {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.project-card:hover .project-icon {
+  transform: translateY(-2px);
+}
+
+/* Better white text hierarchy */
+h1,
+h2,
+h3,
+h4 {
+  color: #FFFFFF;
+}
+
+p {
+  color: #A1A1AA;
+}
+
+/* Desktop */
+@media (max-width: 900px) {
+  .project-card {
+    flex-basis: 68%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .section-shell {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .section-pad {
+    padding-block: 80px;
+  }
+
+  .project-card {
+    flex-basis: 88%;
+  }
+}
