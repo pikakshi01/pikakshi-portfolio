@@ -20,7 +20,7 @@ import {
   SiPython,
   SiJavascript,
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiReact,
   SiFlask,
   SiMysql,
@@ -31,7 +31,6 @@ import {
   SiLinux,
   SiNumpy,
   SiPandas,
-  SiMatlab,
   SiWireshark
 } from 'react-icons/si'
 
@@ -47,7 +46,7 @@ const icons: any = {
   Python: SiPython,
   JavaScript: SiJavascript,
   HTML: SiHtml5,
-  CSS: SiCss3,
+  CSS: SiCss,
   React: SiReact,
   Flask: SiFlask,
   MySQL: SiMysql,
@@ -58,7 +57,7 @@ const icons: any = {
   Linux: SiLinux,
   NumPy: SiNumpy,
   Pandas: SiPandas,
-  MATLAB: SiMatlab,
+  // MATLAB: SiMatlab,
   Wireshark: SiWireshark
 }
 
